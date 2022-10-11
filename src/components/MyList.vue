@@ -1,0 +1,41 @@
+<template>
+  <ul class="todo-main">
+    <!-- key用的是id，不会出现错误 -->
+    <MyItem
+      v-for="todoObj in todos"
+      :key="todoObj.id"
+      :todo="todoObj"
+      :checkTodo="checkTodo"
+      :deleteItem="deleteItem"
+    >
+    </MyItem>
+  </ul>
+</template>
+
+<script>
+import MyItem from "./MyItem";
+export default {
+  name: "MyList",
+  components: { MyItem },
+  props: ["todos", "checkTodo", "deleteItem"],
+};
+</script>
+
+
+<style scoped>
+.todo-main {
+  margin-left: 0;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  padding: 0;
+}
+.todo-empty {
+  height: 40px;
+  line-height: 40px;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  padding-left: 5px;
+  margin-top: 10px;
+}
+</style>
+
