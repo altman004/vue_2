@@ -1,6 +1,5 @@
 <template>
   <ul class="todo-main">
-    <!-- key用的是id，不会出现错误 -->
     <MyItem
       v-for="todoObj in todos"
       :key="todoObj.id"
